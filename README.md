@@ -1,10 +1,10 @@
-# FAUNA
+# NatureDAO
 
 This DAO project is made in the context of Alyra School and the obtention of a blockchain developer certification.
 
 ## Useful links:
 
-[Deployment on Vercel](https://faunadao.vercel.app/)
+[Deployment on Vercel](https://NatureDAOdao.vercel.app/)
 
 [Demo video](https://www.loom.com/share/4bcb50aeee0b4705af85245e03062b60)
 
@@ -22,13 +22,13 @@ You need to add the given [variables](https://hardhat.org/hardhat-runner/docs/gu
 #### Deploy commands
 
 ```sh
-  # Deploy the contract - in fauna/backend
+  # Deploy the contract - in natureDAO/backend
   yarn hardhat run scripts/deploy.js --network sepolia
 
   # Copy the contract's address displayed in console
-  # Paste its value in the file fauna/frontend/constants/constants.js.
+  # Paste its value in the file natureDAO/frontend/constants/constants.js.
 
-  # Run the DApp - in fauna/frontend
+  # Run the DApp - in natureDAO/frontend
   yarn dev
 ```
 
@@ -54,7 +54,7 @@ OpenZeppelin's document generator is available in the project : solidity-docgen.
 
 #### Smart contract
 
-Fauna.sol simple smart contract allowing the Owner to organize a fund raising and select a list of projects among which donators will be able to vote for. Once voting is finished, the funds are split and sent proportionally to elected projects. The Owner may later come back and attest declaratively of the proper use of funds.
+NatureDAO.sol simple smart contract allowing the Owner to organize a fund raising and select a list of projects among which donators will be able to vote for. Once voting is finished, the funds are split and sent proportionally to elected projects. The Owner may later come back and attest declaratively of the proper use of funds.
 
 ## Front-end
 
@@ -73,7 +73,7 @@ Each role has a different display and available functions :
 
 - Owner : If your wallet address is the same as the contract owner, you'll be able to add curated projects, change phases, then send funds and attest of their proper use.
 - Donator : If your wallet address made at least one donation, you'll be able to vote for a project. The Owner can also be a Donator.
-- Visitor : If your wallet address did not make a donation yet, you can make one, or have access to fauna's data.
+- Visitor : If your wallet address did not make a donation yet, you can make one, or have access to NatureDAO's data.
 
 #### Usability
 

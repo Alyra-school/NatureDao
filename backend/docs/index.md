@@ -1,6 +1,6 @@
 # Solidity API
 
-## Fauna
+## NatureDAO
 
 ### Donator
 
@@ -39,19 +39,19 @@ enum Phase {
 ### phase
 
 ```solidity
-enum Fauna.Phase phase
+enum NatureDAO.Phase phase
 ```
 
 ### projects
 
 ```solidity
-struct Fauna.Project[] projects
+struct NatureDAO.Project[] projects
 ```
 
 ### donators
 
 ```solidity
-mapping(address => struct Fauna.Donator) donators
+mapping(address => struct NatureDAO.Donator) donators
 ```
 
 ### totalVotes
@@ -63,16 +63,16 @@ uint256 totalVotes
 ### NewPhase
 
 ```solidity
-event NewPhase(enum Fauna.Phase current)
+event NewPhase(enum NatureDAO.Phase current)
 ```
 
 Emitted when entering a new phase
 
 #### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| current | enum Fauna.Phase | The current phase |
+| Name    | Type                 | Description       |
+| ------- | -------------------- | ----------------- |
+| current | enum NatureDAO.Phase | The current phase |
 
 ### DonationReceived
 
@@ -84,10 +84,10 @@ Emitted when a donation is received
 
 #### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| donator | address | Adress of the donator |
-| amount | uint256 | Amount of the donation |
+| Name    | Type    | Description            |
+| ------- | ------- | ---------------------- |
+| donator | address | Adress of the donator  |
+| amount  | uint256 | Amount of the donation |
 
 ### ProjectCurated
 
@@ -99,8 +99,8 @@ Emitted when a project has been added by owner
 
 #### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
+| Name      | Type    | Description             |
+| --------- | ------- | ----------------------- |
 | projectId | uint256 | Id of the added project |
 
 ### Voted
@@ -113,9 +113,9 @@ Emitted when a donator has voted
 
 #### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| donator | address | Adress of the donator who voted |
+| Name           | Type    | Description                        |
+| -------------- | ------- | ---------------------------------- |
+| donator        | address | Adress of the donator who voted    |
 | votedProjectId | uint256 | Id of the project he/she voted for |
 
 ### FundsGranted
@@ -128,9 +128,9 @@ Emitted when funds are sent to an elected project
 
 #### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| amount | uint256 | Adress of the donator who voted |
+| Name      | Type    | Description                        |
+| --------- | ------- | ---------------------------------- |
+| amount    | uint256 | Adress of the donator who voted    |
 | projectId | uint256 | Id of the project he/she voted for |
 
 ### ProperFundsUsageCertified
@@ -139,14 +139,14 @@ Emitted when funds are sent to an elected project
 event ProperFundsUsageCertified(uint256 projectId, string comment)
 ```
 
-Emitted when the owner attested of the  propoer usage of funds by a project
+Emitted when the owner attested of the propoer usage of funds by a project
 
 #### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| projectId | uint256 | Id of the project |
-| comment | string | Comment written by owner expliciting how funds have been used |
+| Name      | Type    | Description                                                   |
+| --------- | ------- | ------------------------------------------------------------- |
+| projectId | uint256 | Id of the project                                             |
+| comment   | string  | Comment written by owner expliciting how funds have been used |
 
 ### constructor
 
@@ -167,56 +167,56 @@ Checks if the message sender is a Donator
 ### getDonator
 
 ```solidity
-function getDonator(address _addr) external view returns (struct Fauna.Donator donator)
+function getDonator(address _addr) external view returns (struct NatureDAO.Donator donator)
 ```
 
 Get a donator based on an address.
 
 #### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| _addr | address | The address to look for |
+| Name   | Type    | Description             |
+| ------ | ------- | ----------------------- |
+| \_addr | address | The address to look for |
 
 #### Return Values
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| donator | struct Fauna.Donator | The donator corresponding to the given address |
+| Name    | Type                     | Description                                    |
+| ------- | ------------------------ | ---------------------------------------------- |
+| donator | struct NatureDAO.Donator | The donator corresponding to the given address |
 
 ### getProject
 
 ```solidity
-function getProject(uint256 _id) external view returns (struct Fauna.Project project)
+function getProject(uint256 _id) external view returns (struct NatureDAO.Project project)
 ```
 
 Get a project based on an id.
 
 #### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| _id | uint256 | The id to look for |
+| Name | Type    | Description        |
+| ---- | ------- | ------------------ |
+| \_id | uint256 | The id to look for |
 
 #### Return Values
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| project | struct Fauna.Project | The project corresponding to the given id |
+| Name    | Type                     | Description                               |
+| ------- | ------------------------ | ----------------------------------------- |
+| project | struct NatureDAO.Project | The project corresponding to the given id |
 
 ### getProjects
 
 ```solidity
-function getProjects() external view returns (struct Fauna.Project[])
+function getProjects() external view returns (struct NatureDAO.Project[])
 ```
 
 Get all projects.
 
 #### Return Values
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| [0] | struct Fauna.Project[] | projects An array of all the projects |
+| Name | Type                       | Description                           |
+| ---- | -------------------------- | ------------------------------------- |
+| [0]  | struct NatureDAO.Project[] | projects An array of all the projects |
 
 ### getContractBalance
 
@@ -228,9 +228,9 @@ Get contract's balance.
 
 #### Return Values
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| [0] | uint256 | uint The contract's balance |
+| Name | Type    | Description                 |
+| ---- | ------- | --------------------------- |
+| [0]  | uint256 | uint The contract's balance |
 
 ### donate
 
@@ -247,8 +247,8 @@ Will trigger an error if msg.value is 0.
 function sendFunds() external
 ```
 
-Split and send funds to elected projects, proportionnally to their vote count. 
-Only the owner can call this method. 
+Split and send funds to elected projects, proportionnally to their vote count.
+Only the owner can call this method.
 Will trigger an error if Voting phase is not ended or if contract's balance is 0.
 
 _A manual guard prevents from reentrancy attack._
@@ -260,15 +260,15 @@ function certifyFundsUsage(uint256 _id, string _comment) external
 ```
 
 Attest how funds have been used.
-Only the owner can call this method. 
+Only the owner can call this method.
 Will trigger an error if Project did not receive funds.
 
 #### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| _id | uint256 | Id of the project. |
-| _comment | string | Description of how the funds have been used. |
+| Name      | Type    | Description                                  |
+| --------- | ------- | -------------------------------------------- |
+| \_id      | uint256 | Id of the project.                           |
+| \_comment | string  | Description of how the funds have been used. |
 
 ### addCuratedProject
 
@@ -277,16 +277,16 @@ function addCuratedProject(string _name, string _desc, address _projAddress) ext
 ```
 
 Add a project.
-Only the owner can call this method. 
+Only the owner can call this method.
 Will trigger an error if any arg is missing or if project curation phase is over.
 
 #### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| _name | string | Name of the project. |
-| _desc | string | Description of how project's need. |
-| _projAddress | address | Address where to send the funds if project is elected. |
+| Name          | Type    | Description                                            |
+| ------------- | ------- | ------------------------------------------------------ |
+| \_name        | string  | Name of the project.                                   |
+| \_desc        | string  | Description of how project's need.                     |
+| \_projAddress | address | Address where to send the funds if project is elected. |
 
 ### startVotes
 
@@ -295,7 +295,7 @@ function startVotes() external
 ```
 
 Start voting phase.
-Only the owner can call this method. 
+Only the owner can call this method.
 Will trigger an error if no projects have been added yet or if project curation phase is over.
 
 ### submitVote
@@ -305,14 +305,14 @@ function submitVote(uint256 _id) external
 ```
 
 Vote for a project.
-Only a donator can call this method. 
+Only a donator can call this method.
 Will trigger an error if not the right phase, if donator already voted or if given project id is unknown.
 
 #### Parameters
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| _id | uint256 | Id of the project to vote for. |
+| Name | Type    | Description                    |
+| ---- | ------- | ------------------------------ |
+| \_id | uint256 | Id of the project to vote for. |
 
 ### endVotes
 
@@ -321,6 +321,5 @@ function endVotes() external
 ```
 
 End voting phase.
-Only the owner can call this method. 
+Only the owner can call this method.
 Will trigger an error if votes did not start or if nobody voted yet.
-

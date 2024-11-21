@@ -4,9 +4,9 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
 /// @title A DAO bringing animal lovers efforts together to enhance wildlife protection
-/// @author Myriam Chah
+/// @author Cécile Hirschauer
 
-contract Fauna is Ownable, ReentrancyGuard {
+contract NatureDAO is Ownable, ReentrancyGuard {
 
 // *********************************** STRUCTS ***********************************  
     

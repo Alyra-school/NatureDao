@@ -1,22 +1,21 @@
 "use client";
-import { ChakraProvider } from "@chakra-ui/react";
-import { extendTheme } from "@chakra-ui/react";
-import "./globals.css";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Anton, Lexend } from "next/font/google";
+import "./globals.css";
 
-import { UserContextProvider } from "./contexts/userContext";
 import { ContractContextProvider } from "./contexts/contractContext";
+import { UserContextProvider } from "./contexts/userContext";
 
-import "@rainbow-me/rainbowkit/styles.css";
 import {
   getDefaultWallets,
-  RainbowKitProvider,
   lightTheme,
+  RainbowKitProvider,
 } from "@rainbow-me/rainbowkit";
+import "@rainbow-me/rainbowkit/styles.css";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { sepolia, hardhat } from "wagmi/chains";
-import { publicProvider } from "wagmi/providers/public";
+import { hardhat, sepolia } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
+import { publicProvider } from "wagmi/providers/public";
 
 const { chains, publicClient } = configureChains(
   [sepolia, hardhat],
@@ -27,7 +26,7 @@ const { chains, publicClient } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: "FAUNA DAO",
+  appName: "Nature DAO",
   projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_ID,
   chains,
 });
@@ -64,7 +63,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <title>FAUNA - DAO for wildlife protection</title>
+        <title>NATURE - DAO for wildlife protection</title>
       </head>
       <body className={lexend.className}>
         <WagmiConfig config={wagmiConfig}>

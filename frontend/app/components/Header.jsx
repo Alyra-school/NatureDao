@@ -32,7 +32,7 @@ const Header = () => {
   const {
     phase,
     projects,
-    faunaBalance,
+    NatureDAOBalance,
     totalVotes,
     startVotes,
     endVotes,
@@ -63,7 +63,7 @@ const Header = () => {
       >
         {isConnected && (
           <Text fontSize={40} className={anton.className}>
-            FAUNA
+            NatureDAO
           </Text>
         )}
         <Flex>
@@ -98,7 +98,7 @@ const Header = () => {
                 <MenuItem
                   icon={<AtSignIcon />}
                   onClick={sendFunds}
-                  isDisabled={faunaBalance === 0 || phase != 2}
+                  isDisabled={NatureDAOBalance === 0 || phase != 2}
                 >
                   Send Funds
                 </MenuItem>

@@ -5,7 +5,7 @@ import KPICard from "./KPICard";
 import { useContractContext } from "@/app/contexts/contractContext";
 
 const KPIs = () => {
-  const { phase, projects, faunaBalance, donationEvents } =
+  const { phase, projects, NatureDAOBalance, donationEvents } =
     useContractContext();
 
   const donators = [];
@@ -28,7 +28,7 @@ const KPIs = () => {
       <KPICard title="Donators" value={donators.length} />
       <KPICard
         title={`${phase === 3 ? "Remaining funds" : "Funds raised"}`}
-        value={faunaBalance}
+        value={NatureDAOBalance}
       />
     </Flex>
   );

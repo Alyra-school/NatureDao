@@ -4,10 +4,6 @@ This DAO project is made in the context of Alyra School and the obtention of a b
 
 ## Useful links:
 
-[Deployment on Vercel](https://NatureDAOdao.vercel.app/)
-
-[Demo video](https://www.loom.com/share/4bcb50aeee0b4705af85245e03062b60)
-
 ## Getting started
 
 To run the project locally, here are the steps:

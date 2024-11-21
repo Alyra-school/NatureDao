@@ -73,7 +73,7 @@ export const abi = [
     inputs: [
       {
         indexed: false,
-        internalType: "enum Fauna.Phase",
+        internalType: "enum NatureDAO.Phase",
         name: "current",
         type: "uint8",
       },
@@ -247,7 +247,7 @@ export const abi = [
             type: "uint256",
           },
         ],
-        internalType: "struct Fauna.Donator",
+        internalType: "struct NatureDAO.Donator",
         name: "donator",
         type: "tuple",
       },
@@ -298,7 +298,7 @@ export const abi = [
             type: "bool",
           },
         ],
-        internalType: "struct Fauna.Project",
+        internalType: "struct NatureDAO.Project",
         name: "project",
         type: "tuple",
       },
@@ -343,7 +343,7 @@ export const abi = [
             type: "bool",
           },
         ],
-        internalType: "struct Fauna.Project[]",
+        internalType: "struct NatureDAO.Project[]",
         name: "",
         type: "tuple[]",
       },
@@ -369,7 +369,7 @@ export const abi = [
     name: "phase",
     outputs: [
       {
-        internalType: "enum Fauna.Phase",
+        internalType: "enum NatureDAO.Phase",
         name: "",
         type: "uint8",
       },

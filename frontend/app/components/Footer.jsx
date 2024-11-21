@@ -13,7 +13,7 @@ const Footer = () => {
       bottom="0"
       zIndex={2}
     >
-      <Text fontSize={14}>© FAUNA by Myriam Chah</Text>
+      <Text fontSize={14}>© NatureDAO by Cécile Hirschauer</Text>
     </Flex>
   );
 };

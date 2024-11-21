@@ -22,7 +22,7 @@ export const ContractContextProvider = ({ children }) => {
   const [phase, setPhase] = useState(0);
   const [projects, setProjects] = useState([]);
   const [totalVotes, setTotalVotes] = useState(0);
-  const [faunaBalance, setFaunaBalance] = useState(0);
+  const [NatureDAOBalance, setNatureDAOBalance] = useState(0);
   const [donationEvents, setDonationEvents] = useState([]);
   const [fundsGrantedEvents, setFundsGrantedEvents] = useState([]);
   const [certifEvents, setCertifEvents] = useState([]);
@@ -72,14 +72,14 @@ export const ContractContextProvider = ({ children }) => {
     }
   };
 
-  const getFaunaBalance = async () => {
+  const getNatureDAOBalance = async () => {
     try {
       const balance = await readContract({
         address: contractAddress,
         abi: abi,
         functionName: "getContractBalance",
       });
-      setFaunaBalance(formatEther(balance));
+      setNatureDAOBalance(formatEther(balance));
     } catch (e) {
       console.log(e.message);
     }
@@ -118,7 +118,7 @@ export const ContractContextProvider = ({ children }) => {
       });
       const { hash } = await writeContract(request);
       await waitForTransaction({ hash });
-      await getFaunaBalance();
+      await getNatureDAOBalance();
       await getDonationEvents();
       await checkDonator();
       toast.showSuccess(
@@ -288,7 +288,7 @@ export const ContractContextProvider = ({ children }) => {
     if (isConnected) {
       checkPhase();
       getProjects();
-      getFaunaBalance();
+      getNatureDAOBalance();
       getTotalVotes();
       getAllEvents();
     }
@@ -300,7 +300,7 @@ export const ContractContextProvider = ({ children }) => {
         phase,
         projects,
         totalVotes,
-        faunaBalance,
+        NatureDAOBalance,
         donationEvents,
         fundsGrantedEvents,
         certifEvents,
